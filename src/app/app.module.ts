@@ -3,14 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TacheRoutingModule } from './tache/tache-routing.module';
+import { TacheModule } from './tache/tache.module';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TacheModule
   ],
   providers: [],
   bootstrap: [AppComponent]
