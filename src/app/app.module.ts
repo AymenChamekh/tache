@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TacheRoutingModule } from './tache/tache-routing.module';
 import { TacheModule } from './tache/tache.module';
+import { CoreModule } from './core/core.module';
 
 
 
@@ -16,9 +17,9 @@ import { TacheModule } from './tache/tache.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TacheModule
+    TacheModule,
+    CoreModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
