@@ -9,7 +9,7 @@ import { Tache } from '../entities/Tache';
 })
 export class TacheService {
 
-  private tacheServerUrl = environment.tacheBaseUrl;
+  private tacheServerUrl = environment.apiBaseUrl;
 
   constructor(private http : HttpClient) { }
 

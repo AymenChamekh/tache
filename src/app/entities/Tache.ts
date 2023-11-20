@@ -1,7 +1,9 @@
+import { Etat } from "./Etat";
+
 export class Tache{
 
     id : number;
-    name : String;
-    etat : Etat;
+    nom : String;
+    etat : Etat ;
 
 }

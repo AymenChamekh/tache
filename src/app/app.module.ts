@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TacheRoutingModule } from './tache/tache-routing.module';
 import { TacheModule } from './tache/tache.module';
 import { CoreModule } from './core/core.module';
+import { TacheRoutingModule } from './tache/tache-routing.module';
+
 
 
 
@@ -18,7 +19,8 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     AppRoutingModule,
     TacheModule,
-    CoreModule
+    CoreModule,
+    TacheRoutingModule
   ],
   bootstrap: [AppComponent]
 })

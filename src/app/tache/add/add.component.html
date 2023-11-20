@@ -1,1 +1,35 @@
-<p>add works!</p>
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Ajouter Tache</h5>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="providerForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="nom">Nom :</label>
+        <div class="input-group">
+          <input type="text" id="nom" formControlName="nom" required>
+        </div>
+      </div>
+     
+    
+        <div class="form-group">
+          <label for="etat">Etat :</label>
+          <select id="etat" formControlName="etat" class="form-control" required>
+            <option *ngFor="let option of etatKeys" [ngValue]="etat[option]">
+              {{ option }}
+            </option>
+          </select>
+        </div>
+        <div class="button-group">
+          <button type="submit" [disabled]="!providerForm.valid">Add</button>
+          <button type="button" (click)="onCancel()">Cancel</button>
+        </div>
+
+
+    </form>
+  </div>
+  <div class="card-footer">
+    
+  </div>
+</div>
