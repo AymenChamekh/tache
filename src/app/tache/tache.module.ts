@@ -13,8 +13,6 @@ import {  HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { TacheService } from '../service/tache.service';
-
 
 @NgModule({
   declarations: [

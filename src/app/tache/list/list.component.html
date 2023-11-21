@@ -33,7 +33,7 @@
                         <mat-icon routerLink="">edit</mat-icon>
                     </button>
                     <button mat-icon-button color="warn">
-                        <mat-icon>delete_outline</mat-icon>
+                        <mat-icon (click)="deleteTache(element.idTache)">delete_outline</mat-icon>
                     </button>
                 </td>
             </ng-container>

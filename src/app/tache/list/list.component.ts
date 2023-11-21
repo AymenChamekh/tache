@@ -13,7 +13,6 @@ import { AddComponent } from '../add/add.component';
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
-  id: number;
   taches : Tache[] = [];
   tache : Tache = new Tache();
   searchkey :string;
@@ -50,4 +49,22 @@ export class ListComponent {
     });
   }
 
+  deleteTache(id: any){
+    let conf = confirm("Etes-vous sur de supprimer Cette Tâche ?");
+    if (conf){
+      this.tacheService.deleteTache(id).subscribe(()=>{
+        alert("Tache supprimée avec suucès");
+        window.location.reload();
+      },
+      error =>{
+        console.error("Erreur lors de la suppression de la tâche :", error);
+      }
+
+      )
+    }
+
+   
+  }
+
+  
 }
