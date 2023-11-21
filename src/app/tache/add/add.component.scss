@@ -17,7 +17,7 @@
   
   /* Title style */
   .card-title {
-    margin: 0;
+    text-align: center;
   }
   
   /* Body style */
@@ -61,11 +61,3 @@
     cursor: pointer;
   }
   
-  
-  /* Footer style */
-  .card-footer {
-    background-color: #f8f9fa; /* Light gray color, you can change this */
-    padding: 10px;
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0 0 8px 8px;
-  }

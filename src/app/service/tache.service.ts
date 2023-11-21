@@ -23,7 +23,7 @@ export class TacheService {
     return this.http.delete(`${this.tacheServerUrl}/tache/delete/${id}`);
   }
   public updateTache(data : Tache):Observable<any>{
-    return this.http.put(`${this.tacheServerUrl}/tache/update/${data}`,data);}
+    return this.http.put(`${this.tacheServerUrl}/tache/update`,data);}
 
     public getTache(id : number): Observable<any>{
       return this.http.get<Tache>(`${this.tacheServerUrl}/tache/find/${id}`); }

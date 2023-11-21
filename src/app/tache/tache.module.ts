@@ -4,7 +4,6 @@ import { TacheRoutingModule } from './tache-routing.module';
 import { AddComponent } from './add/add.component';
 import { ListComponent } from './list/list.component';
 import { UpdateComponent } from './update/update.component';
-import { DeleteComponent } from './delete/delete.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -13,15 +12,14 @@ import {  HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { TacheService } from '../service/tache.service';
+
 
 
 @NgModule({
   declarations: [
     ListComponent,
     UpdateComponent,
-    AddComponent,
-    DeleteComponent
+    AddComponent
   ],
   imports: [
     BrowserModule,

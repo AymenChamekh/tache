@@ -36,7 +36,7 @@ div {
   }
   
   .mat-cell{
-    color:black;
+    color:rgb(218, 65, 65);
   }
   .mat-header-cell{
     color:brown;
@@ -50,4 +50,13 @@ div {
   }
   .container{
     justify-content: center;
+  }
+  .mat-icon.red-icon {
+    color: red;
+   
+  }
+  .mat-icon.blue-icon{
+    color: blueviolet;
+    
+   
   }
