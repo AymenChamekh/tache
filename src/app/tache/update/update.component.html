@@ -3,7 +3,7 @@
       <h5 class="card-title">Modifier Tache</h5>
     </div>
     <div class="card-body">
-      <form *ngFor="let element of taches" [formGroup]="providerForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="providerForm" (ngSubmit)="onSubmit()">
   
         <div class="form-group">
           <label for="nom" ></label>

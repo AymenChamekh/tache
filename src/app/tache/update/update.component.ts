@@ -12,8 +12,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class UpdateComponent implements OnInit{
   @Input() currentTache:Tache;
-  taches:Tache[]=[];
   etat :typeof Etat = Etat ;
+  newTache:Tache= new Tache();
   etatKeys: (keyof typeof Etat)[] = Object.keys(this.etat) as (keyof typeof Etat)[];
   providerForm :FormGroup;
   constructor(private fb :FormBuilder, private tacheService:TacheService, private dialog:MatDialog){
@@ -24,15 +24,19 @@ export class UpdateComponent implements OnInit{
     });
   }
   ngOnInit(): void {
-    this.taches.push(this.currentTache);
-    console.log(this.taches);
+    
+    console.log("la nouvelle tache"+this.newTache);
+
+
   }
 
   onSubmit(){
     if (this.providerForm.valid) {
-    
-      this.currentTache = this.providerForm.value;
-     this.tacheService.updateTache(this.currentTache).subscribe(data =>{
+     this.newTache.id=this.currentTache.id;
+     this.newTache.nom = this.providerForm.value.nom;
+     this.newTache.etat = this.providerForm.value.etat;
+     console.log(this.newTache);
+     this.tacheService.addTache(this.newTache).subscribe(data =>{
            (error:any) =>{console.log(error)}
      });
      this.dialog.closeAll();
