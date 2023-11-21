@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TacheService } from '../../service/tache.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { AddComponent } from '../add/add.component';
+import { UpdateComponent } from '../update/update.component';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -61,9 +62,14 @@ export class ListComponent {
       }
 
       )
-    }
+    }   
+  }
 
-   
+  openDiagUpdateTache(tache:Tache){
+    let dialogRef = this.dialog.open(UpdateComponent,{data:{tache}});
+    console.log(tache);
+    dialogRef.componentInstance.currentTache=tache;
+
   }
 
   

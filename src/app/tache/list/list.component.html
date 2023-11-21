@@ -30,7 +30,7 @@
                 </th>
                 <td mat-cell *matCellDef="let element">
                     <button mat-button class="menu-button" color="purple">
-                        <mat-icon routerLink="">edit</mat-icon>
+                        <mat-icon (click)="openDiagUpdateTache(element)">edit</mat-icon>
                     </button>
                     <button mat-icon-button color="warn">
                         <mat-icon (click)="deleteTache(element.idTache)">delete_outline</mat-icon>
