@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UpdateComponent } from './update.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SharedModule } from '../../shared/shared.module';
+import { Tache } from '../../entities/Tache';
+import { Etat } from '../../entities/Etat';
 
 describe('UpdateComponent', () => {
   let component: UpdateComponent;
@@ -8,7 +12,8 @@ describe('UpdateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UpdateComponent]
+      declarations: [UpdateComponent],
+      imports :[ HttpClientTestingModule , SharedModule]
     })
     .compileComponents();
     
@@ -19,5 +24,20 @@ describe('UpdateComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should initialize t if currentTache is provided', () => {
+       
+    // Arrange
+    const currentTache: Tache = { id: 1, nom: 'Tache1', etat: Etat.En_cours };
+    currentTache.id = 1;
+    currentTache.nom = "Tache1";
+    currentTache.etat = Etat.En_cours
+    component.currentTache = currentTache;
+
+    // Act
+    component.ngOnInit();
+
+    // Assert
+    expect(component.t).toEqual(currentTache);
   });
 });

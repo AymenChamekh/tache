@@ -12,7 +12,7 @@ import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 })
 export class UpdateComponent {
 
-  @Input() currentTache:Tache;
+  @Input() currentTache:Tache | null;
   t : Tache = new Tache();
   etat :typeof Etat = Etat ;
   etatKeys: (keyof typeof Etat)[] = Object.keys(this.etat) as (keyof typeof Etat)[];
@@ -28,14 +28,18 @@ export class UpdateComponent {
   }
  
   ngOnInit(){
-    this.t = this.currentTache;
+    if (this.currentTache) {
+      this.t = this.currentTache;
+    }
+
   }
   onSubmit(){
     
     if (this.providerForm.valid) {
     
    const updatetache = this.providerForm.value;
-    updatetache.id = this.currentTache.id;
+   if (this.currentTache){
+    updatetache.id = this.currentTache.id;}
    this.tacheService.updateTache(updatetache).subscribe(data =>{
          console.log(data),
          (error:any) =>{console.log(error)}
