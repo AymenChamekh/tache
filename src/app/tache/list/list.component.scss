@@ -53,10 +53,24 @@ div {
   }
   .mat-icon.red-icon {
     color: red;
-   
+    margin-right: 10px;
   }
   .mat-icon.blue-icon{
-    color: blueviolet;
-    
+    color: rgb(66, 65, 65);
+    margin-right: 10px; 
    
   }
+.mat-icon.cached {
+  color: rgb(255, 17, 0); 
+  margin-left: 10px;
+}
+
+.mat-icon.done_outline {
+  color: green; 
+  margin-left: 10px;
+}
+.status{
+  display: flex;
+    align-items: center; 
+    
+}

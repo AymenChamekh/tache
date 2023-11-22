@@ -35,6 +35,7 @@ export class AddComponent {
     console.log(this.tache);
    this.tacheService.addTache(this.tache).subscribe(data =>{
          console.log(data),
+         window.location.reload(),
          (error:any) =>{console.log(error)}
    });
    this.dialog.closeAll();

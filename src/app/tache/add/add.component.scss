@@ -1,9 +1,7 @@
 .card {
     width: 400px;
     margin: 20px auto;
-   
     border-radius: 8px;
-   
   }
   
   /* Header style */
@@ -56,6 +54,14 @@
     background-color: #dc3545; /* Red color, you can change this */
     color: #fff;
     padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button[type="submit"] {
+    background-color: rgb(21, 112, 21); /* Red color, you can change this */
+    color: #fff;
+    padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;

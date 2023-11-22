@@ -29,9 +29,7 @@ describe('UpdateComponent', () => {
        
     // Arrange
     const currentTache: Tache = { id: 1, nom: 'Tache1', etat: Etat.En_cours };
-    currentTache.id = 1;
-    currentTache.nom = "Tache1";
-    currentTache.etat = Etat.En_cours
+    
     component.currentTache = currentTache;
 
     // Act

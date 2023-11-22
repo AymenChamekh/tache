@@ -3,16 +3,10 @@
         <div class="card-header">
             <button type="button" class="btn btn-success" id="btn" (click)="openDialogAddTache()">Ajouter</button>
             <h2 id="p" class="text-center mb-0">Liste des Taches</h2>
-          </div>
-
-
-
-
+        </div>
         <table mat-table matSort [dataSource]="datasource">
 
-
-
-            <!-- Name Api Column -->
+            <!-- Name Column -->
             <ng-container matColumnDef="Nom">
                 <th mat-header-cell mat-sort-header *matHeaderCellDef> <b>Nom</b> </th>
                 <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
@@ -21,28 +15,32 @@
             <!-- State Column -->
             <ng-container matColumnDef="Etat">
                 <th mat-header-cell mat-sort-header *matHeaderCellDef> <b>Etat </b> </th>
-                <td mat-cell *matCellDef="let element"> {{element.etat}} </td>
+              <!--  <td mat-cell *matCellDef="let element"> {{element.etat}} </td>-->
+              <td mat-cell *matCellDef="let element">
+                <span *ngIf="element.etat === 'En_cours'" class="status">
+                   En cours  	<mat-icon class="cached">cached</mat-icon>
+                </span>
+                <span *ngIf="element.etat === 'Terminé'" class="status">
+                    Terminé  <mat-icon class="done_outline">done_outline</mat-icon> 
+                </span>
+            </td>
             </ng-container>
-
+            <!-- Actions Column -->
             <ng-container matColumnDef="Actions">
                 <th mat-header-cell *matHeaderCellDef><b>Actions </b> </th>
-                <td mat-cell *matCellDef="let element">
-                  
-                        <mat-icon class="blue-icon" (click)="openDialogUpdateTache(element)">edit</mat-icon>
-                   
-                    
-                        <mat-icon class="red-icon" (click)="deleteTache(element.id)">delete_outline</mat-icon>
-                    
+                <td mat-cell *matCellDef="let element" >
+                    <span class="status">
+                    <mat-icon class="blue-icon" (click)="openDialogUpdateTache(element)" >edit</mat-icon>
+                    <mat-icon class="red-icon" (click)="deleteTache(element.id)">delete_forever</mat-icon>
+                </span>
                 </td>
-            </ng-container>
-
+            </ng-container> 
+ 
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-
         </table>
-
         <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[ 5, 10, 25, 100]">
         </mat-paginator>
 
